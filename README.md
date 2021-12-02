@@ -10,10 +10,10 @@ docker build -t checkmk-agent:latest .
 ## Running
 ```bash
 # backgrounding it
-docker run -d --privileged -p 6556:6556 --name checkmk-agent checkmk-agent:latest
+docker run -d --privileged -p 6556:6556 --hostname docker01 --name checkmk-agent checkmk-agent:latest
 
 # debugging
-docker run -it --rm --privileged -p 6556:6556 --name checkmk-agent checkmk-agent:latest bash
+docker run -it --rm --privileged -p 6556:6556 --hostname docker01 --name checkmk-agent checkmk-agent:latest bash
 
 root@2967e06d8e2f:/ check_mk_agent | head
 <<<check_mk>>>
