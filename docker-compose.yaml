@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+  checkmk_agent:
+    privileged: true
+    ports:
+        - '${CMKA_PORT:-6556}:6556'
+    container_name: checkmk_agent
+    build:
+      context: .
