@@ -3,7 +3,9 @@ services:
   checkmk_agent:
     privileged: true
     ports:
-        - '${CMKA_PORT:-6556}:6556'
+      - '${CMKA_PORT:-6556}:6556'
     container_name: checkmk_agent
+    volumes: 
+      - /var/run/docker.sock:/var/run/docker.sock
     build:
       context: .
