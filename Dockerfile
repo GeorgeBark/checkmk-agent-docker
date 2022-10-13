@@ -1,7 +1,7 @@
 FROM python:3.6-slim-stretch
 RUN apt update
 RUN apt install -y xinetd curl nano
-RUN curl -sSL https://get.docker.com/ | sh
+RUN curl -fsSL https://get.docker.com/ | sh
 COPY ./plugins /usr/lib/check_mk_agent/plugins
 RUN python -m pip uninstall docker-py docker
 RUN python -m pip install docker
