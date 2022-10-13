@@ -3,7 +3,7 @@
 # Copyright (C) 2019 tribe29 GmbH - License: GNU General Public License v2
 # This file is part of Checkmk (https://checkmk.com). It is subject to the terms and
 # conditions defined in the file COPYING, which is part of this source code package.
-r"""Check_MK Agent Plugin: mk_docker.py
+"""Check_MK Agent Plugin: mk_docker.py
 
 This plugin is configured using an ini-style configuration file,
 i.e. a file with lines of the form 'key: value'.
