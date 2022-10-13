@@ -1,10 +1,10 @@
-FROM debian:bullseye-slim
+FROM python:3.6-slim-stretch
 RUN apt update
 RUN apt install -y xinetd curl nano
 RUN curl -sSL https://get.docker.com/ | sh
 COPY ./plugins /usr/lib/check_mk_agent/plugins
-RUN pip uninstall docker-py docker
-RUN pip install docker
+RUN python -m pip uninstall docker-py docker
+RUN python -m pip install docker
 COPY ./files/xinetd.d/check-mk-agent /etc/xinetd.d/check-mk-agent
 #RUN curl https://raw.githubusercontent.com/tribe29/checkmk/master/agents/cfg_examples/xinetd.conf > /etc/xinetd.d/check_mk
 COPY ./files/check_mk_agent /usr/bin/check_mk_agent
